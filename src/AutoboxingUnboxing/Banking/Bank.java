@@ -1,4 +1,4 @@
-package Banking;
+package autoboxingUnboxing.banking;
 
 import java.util.ArrayList;
 
@@ -54,13 +54,15 @@ public class Bank {
                 Customer branchCustomer = branCustomers.get(i);
                 System.out.println("Customer: " + branchCustomer.getName() + "[" + (i + 1) + "]");
                 if (showTransactions) {
-                    System.out.println("Transactions");
+                    System.out.println("Transactions: ");
                     ArrayList<Double> transaction = branchCustomer.getTransactions();
                     for (int j = 0; j < transaction.size(); j++) {
                         System.out.println("[" + (j + 1) + "] Amount " + transaction.get(j));
                     }
+                    System.out.println();
                 }
             }
+            return true;
         }
         return false;
     }
