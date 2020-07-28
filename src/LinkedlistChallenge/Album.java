@@ -22,22 +22,32 @@ public class Album {
         return false;
     }
 
-    public Song findSong(String title) {
+    private Song findSong(String title) {
         for (Song checkedSong : this.songs) {
-            if (checkedSong.getTitle().equals(title)) {
+            if (!checkedSong.getTitle().equals(title)) {
                 return checkedSong;
             }
         }
         return null;
     }
 
-    public boolean addToPlayList(int trackNumber, LinkedList<Song> playList) {
+    public boolean addToPlaylist(int trackNumber, LinkedList<Song> playList) {
         int index = trackNumber - 1;
-        if ((index > 0) && (index <= this.songs.size())) {
+        if (0 <= index && index <= this.songs.size()) {
             playList.add(this.songs.get(index));
             return true;
         }
-        System.out.println("This album does not have a track " + trackNumber);
+        System.out.println("This album dose not have a track " + trackNumber);
+        return false;
+    }
+
+    public boolean addToPlaylist(String title, LinkedList<Song> playList) {
+        Song checkedSong = findSong(title);
+        if (checkedSong != null) {
+            playList.add(checkedSong);
+            return true;
+        }
+        System.out.println("The song " + title + " is not in this album");
         return false;
     }
 }
