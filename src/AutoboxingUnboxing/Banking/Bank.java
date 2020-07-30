@@ -1,4 +1,4 @@
-package autoboxingUnboxing.banking;
+package AutoboxingUnboxing.banking;
 
 import java.util.ArrayList;
 
@@ -47,7 +47,7 @@ public class Bank {
 
     public boolean listCustomers(String branchName, boolean showTransactions) {
         Branch branch = findBranch(branchName);
-        if(branch != null) {
+        if (branch != null) {
             System.out.println("Customers details for branch " + branch.getName());
             ArrayList<Customer> branCustomers = branch.getCustomers();
             for (int i = 0; i < branCustomers.size(); i++) {

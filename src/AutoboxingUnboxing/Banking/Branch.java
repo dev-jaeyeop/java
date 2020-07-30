@@ -1,4 +1,4 @@
-package autoboxingUnboxing.banking;
+package AutoboxingUnboxing.banking;
 
 import java.util.ArrayList;
 

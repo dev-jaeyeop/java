@@ -24,16 +24,16 @@ public class Album {
 
     private Song findSong(String title) {
         for (Song checkedSong : this.songs) {
-            if (!checkedSong.getTitle().equals(title)) {
+            if (checkedSong.getTitle().equals(title)) {
                 return checkedSong;
             }
         }
         return null;
     }
 
-    public boolean addToPlaylist(int trackNumber, LinkedList<Song> playList) {
+    public boolean addToPlayList(int trackNumber, LinkedList<Song> playList) {
         int index = trackNumber - 1;
-        if (0 <= index && index <= this.songs.size()) {
+        if ((0 <= index) && (index <= this.songs.size())) {
             playList.add(this.songs.get(index));
             return true;
         }
@@ -41,7 +41,7 @@ public class Album {
         return false;
     }
 
-    public boolean addToPlaylist(String title, LinkedList<Song> playList) {
+    public boolean addToPlayList(String title, LinkedList<Song> playList) {
         Song checkedSong = findSong(title);
         if (checkedSong != null) {
             playList.add(checkedSong);
