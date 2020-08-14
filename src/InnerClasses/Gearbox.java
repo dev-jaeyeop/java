@@ -44,7 +44,7 @@ public class Gearbox {
     }
 
 
-    private class Gear {
+    public class Gear {
         private int gearNumber;
         private double ratio;
 
